@@ -35,10 +35,10 @@ class Processor8086
 
   private
     def load_registers
-      @cs = calculate_with_paginate(@so.size + @psp.size)
-      @ds = calculate_with_paginate(@so.size)
-      @es = calculate_with_paginate(@so.size)
-      @ss = calculate_with_paginate(@so.size + @psp.size + @code_segment.size + @data_segment.size + @extra_segment.size)
+      @cs = calculate_with_paginate(@so.top_segment + @psp.top_segment)
+      @ds = calculate_with_paginate(@so.top_segment)
+      @es = calculate_with_paginate(@so.top_segment)
+      @ss = calculate_with_paginate(@so.top_segment + @psp.top_segment + @code_segment.top_segment + @data_segment.top_segment + @extra_segment.top_segment)
       @sp = @stack_segment.size
 
       @stack_changed = false
@@ -51,8 +51,8 @@ class Processor8086
     end
 
     def first_movement
-      @ds = calculate_with_paginate((@cs * 16) + @code_segment.size)
-      @es = calculate_with_paginate((@ds * 16) + @data_segment.size)
+      @ds = calculate_with_paginate((@cs * 16) + @code_segment.top_segment)
+      @es = calculate_with_paginate((@ds * 16) + @data_segment.top_segment)
       @stack_changed = true
     end
 end

@@ -27,7 +27,7 @@ describe Processor8086 do
     end
 
     it '#ss' do
-      expect(processor.ss.value).to eq('110')
+      expect(processor.ss.value).to eq('111')
     end
 
     it '#sp' do
@@ -57,7 +57,7 @@ describe Processor8086 do
     end
 
     it '#ss' do
-      expect(processor.ss.value).to eq('110')
+      expect(processor.ss.value).to eq('111')
     end
 
     it '#sp' do

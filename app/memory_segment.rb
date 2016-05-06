@@ -5,4 +5,8 @@ class MemorySegment
   def initialize size
     @size = size
   end
+
+  def top_segment
+    @size.paginate_round
+  end
 end
