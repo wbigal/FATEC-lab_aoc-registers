@@ -6,7 +6,10 @@ O objetivo deste programa é calcular os registardores da arquitetura 8086 da In
 
 A linguagem utilizada foi o Ruby 2.3
 
-Para executar apenas digite `ruby main.rb`
+Para executar:
+- Instale as dependências `bundle install`
+- Rode os testes `rspec`
+- Execute o programa `ruby main.rb`
 
 ## TODO
 
